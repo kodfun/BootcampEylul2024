@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block vs Inline</title>
+</head>
+
+<body>
+  <!-- h1, p, div, ul gibi elementler block elementtir. Bulunduğu satırı kendine rezerve eder.
+   Sağı boş dahi olsa sağına yeni bir element kabul etmez. -->
+
+  <p>Adım</p>
+  <p>Ali</p>
+
+  <hr><!-- Horizontal Rule : Yatay Çizgi -->
+
+  <!-- span, img, a, strong,  em gibi elementler inline elementtir. 
+   satırı paylaşırlar yan yana sıralanırlar 
+   SANKİ BİR CÜMLENİN HARFLERİ GİBİ DAVRANILAR -->
+
+  <span>Adım</span>
+  <span>Veli</span>
+
+  <hr>
+
+  Bu resim
+  <img src="//picsum.photos/id/144/1000" alt="bir resim" height="16">
+  <em>Samed</em>'e gelsin.
+
+  <hr>
+
+  <!-- p>lorem5 -->
+  <p>Lorem <a href="https://kod.fun">ipsum</a> <strong>dolor</strong> sit amet.</p>
+
+  <hr>
+  <p>
+    Alan: 100km<sup>2</sup>
+  </p>
+
+  <p>
+    Bol bol <strong><em>H<sub>2</sub>O</em></strong> içiniz.
+  </p>
+
+  <!-- NOT: HTML TAGLARINDA SON AÇILAN TAG İLK KAPANIR -->
+  <!-- YANLIŞ KULLANIM -->
+  <!-- <span><strong>abc</span></strong> -->
+
+  <!-- DOĞRU KULLANIM -->
+   <span><strong>abc</strong></span>
+
+</body>
+
+</html>
