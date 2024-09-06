@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>device-width deneme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button onclick="alert('bana tıklama bi daha')">BEN BİR BUTONUM</button>
+    <p contenteditable="true">Lütfen bu paragrafın içeriğini değiştirmeye çalışın (contenteditable)</p>
+    <img src="agac.svg" alt="ağaç" width="100">
+    <h1>Bu Bir Başlıktır</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nihil sint consequuntur animi eaque, numquam
+        corrupti hic illum asperiores laborum alias, ab molestiae temporibus expedita fuga nemo magni dolorem at?</p>
+    <p>Praesentium harum iste quo ab accusantium quibusdam culpa. At sequi maxime laudantium minima odio! Iusto saepe
+        voluptate modi dolore a molestias quis eos? Ipsum vel, ea sint libero cum quae?</p>
+    <p>Exercitationem, in temporibus? Veniam nostrum, repudiandae ipsam facilis distinctio accusantium in itaque
+        laudantium laborum, natus numquam? In amet est cupiditate, molestias tempore nihil voluptates fuga sint dolor
+        omnis maxime ipsa.</p>
+
+    <form action="gonder.html">
+        <p>
+            Askerlik yaptınız mı?
+            <label>
+                <input type="radio" name="askerlik" value="yes"> Evet
+            </label>
+            <label>
+                <input type="radio" name="askerlik" value="no"> Hayır
+            </label>
+        </p>
+        <p>
+            Hobileriniz<br>
+            <label><input type="checkbox" name="hobi" value="swimming"> Yüzmek</label><br>
+            <label><input type="checkbox" name="hobi" value="running"> Koşu</label><br>
+            <label><input type="checkbox" name="hobi" value="tennis"> Tenis</label><br>
+            <label><input type="checkbox" name="hobi" value="music"> Müzik</label><br>
+            <label><input type="checkbox" name="hobi" value="cinema"> Sinema</label><br>
+        </p>
+        <p>
+            <label for="sehir">Doğduğunuz Yer</label>
+            <select name="city" id="sehir">
+                <option value="1">Adana</option>
+                <option value="6">Ankara</option>
+                <option value="34">İstanbul</option>
+                <option value="35">İzmir</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="ad">Adınız</label>
+            <input type="text" required>
+        </p>
+
+        <button>Gönder</button>
+
+
+    </form>
+
+    <h2>HABERLER</h2>
+    <iframe src="https://haber.com" width="300" height="400" frameborder="1"></iframe>
+</body>
+
+</html>
