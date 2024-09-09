@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div elementlerine aşağıdaki özellikleri taşıyacak şekilde css verin:
+        1. toplam yüksekliği: 200px
+        2. toplam genişliği: 200px 
+        3. arka plan rengi (siz seçin) verin
+        4. 20px dolgu (padding)
+        5. 10px border
+        6. 15px margin
+        7. yazı rengi beyaz
+        */ 
+        div {
+            box-sizing: border-box;
+            height: 200px;
+            width: 200px;
+            background-color: cornflowerblue;
+            padding: 20px;
+            border: 10px solid black;
+            margin: 15px;
+            color: white;
+            float: left;
+            outline: 10px solid #ffff008a;
+            /* outline-offset: 5px; */
+        }
+        main {
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- PROBLEM: main kutusunun kenarlığı içindeki her şeyi çevrelemesi gerekirken neden şu an çevrelemiyor. Cevabı float konusunda gelecek? -->
+    <main>
+        <!-- div*10>{Kutu $} -->
+        <div>Kutu 1</div>
+        <div>Kutu 2</div>
+        <div>Kutu 3</div>
+        <div>Kutu 4</div>
+        <div>Kutu 5</div>
+        <div>Kutu 6</div>
+        <div>Kutu 7</div>
+        <div>Kutu 8</div>
+        <div>Kutu 9</div>
+        <div>Kutu 10</div>
+    </main>
+</body>
+</html>

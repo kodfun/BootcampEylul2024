@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        /* https://www.w3schools.com/css/css_attribute_selectors.asp */
+        div[class^="kutu"] {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        .kutu1 {
+            background: linear-gradient(to right, cyan, magenta);
+        }
+
+        .kutu2 {
+            background: linear-gradient(135deg, cyan, magenta, yellow);
+        }
+
+        .kutu3 {
+            background: radial-gradient(red, blue);
+        }
+
+        .kutu4 {
+            background: repeating-linear-gradient(90deg, red, white 10px);
+        }
+
+        .kutu5 {
+            background: repeating-radial-gradient(
+                black, black 5px, white 5px, white 10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="kutu5"></div>
+    <div class="kutu4"></div>
+    <div class="kutu3"></div>
+    <div class="kutu2"></div>
+    <div class="kutu1"></div>
+</body>
+</html>
