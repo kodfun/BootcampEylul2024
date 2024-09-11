@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        header, nav, main>div, footer {
+            background-color: gainsboro;
+            margin-bottom: 10px;
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        main>div {
+            float: left;
+            padding: 100px 10px;
+        }
+
+        main::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .col1, .col3 {
+            width: 15%;
+        }
+
+        .col2 {
+            width: calc(70% - 20px);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        /* EKRAN MAXİMUM 500PX İSE */
+        @media screen and (max-width: 500px) {
+            .col1, .col2, .col3 {
+                width: 100%;
+                margin: 0 0 10px 0;
+            }
+        }
+
+        /* YAZICIDAN ÇIKTI ALIRKEN DİKKAT EDİN:
+           Header YAZISI BÜYÜK HARF OLACAK */
+        @media print {
+            header {
+                text-transform: uppercase;
+            }
+            /* çıktı alırken footer gizle */
+            footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>
+        <div class="col1">Left</div>
+        <div class="col2">Middle</div>
+        <div class="col3">Right</div>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>

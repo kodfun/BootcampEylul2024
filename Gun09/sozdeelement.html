@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sözde Element</title>
+    <style>
+        html {
+            font-size: 24px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        p::first-letter {
+            font-size: 300%;
+            float: left;
+            line-height: .75;
+            font-weight: bold;
+        }
+
+        p::first-line {
+            text-decoration: underline;
+        }
+
+        p::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        main {
+            max-width: 600px;
+            /*      top   x   bottom   */
+            margin: 60px auto 20px;
+            background-color: #A9C9FF;
+            background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+            padding: 36px;
+            border-radius: 10px;
+            box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+        }
+
+        @media (max-width: 720px) {
+            main {
+                margin: 40px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- p*4>lorem -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatem impedit, vero ab cum repudiandae
+            perspiciatis ipsam facere sed alias soluta, dicta sint asperiores, blanditiis voluptatibus distinctio nisi
+            quidem nesciunt!</p>
+        <p>Cumque earum officia inventore est. Voluptas minus quisquam accusamus, obcaecati totam sunt enim excepturi
+            inventore tempore, doloribus voluptatum quam maxime voluptate. Quas cumque facere suscipit, optio veniam hic
+            eius blanditiis!</p>
+        <p>Nesciunt harum dolore, quos corrupti culpa laudantium eius illum alias, ad quia saepe quaerat, temporibus
+            illo incidunt pariatur possimus quae ducimus recusandae accusantium iste cupiditate voluptas laboriosam?
+            Incidunt, labore! Corrupti!</p>
+        <p>Nobis ducimus minima provident deserunt magni, nam eveniet ut non doloremque doloribus, consequatur similique
+            sed voluptatibus accusamus? Nulla voluptates officiis laudantium tenetur minima quia fugiat consectetur
+            dolorum optio voluptatem! Voluptatibus?</p>
+    </main>
+</body>
+
+</html>
