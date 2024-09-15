@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listeler</title>
+    <style>
+        h4 {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 5px;
+        }
+        
+        .stil1 {
+            list-style: none;
+        }
+        .stil2 {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .stil3 {
+            list-style-type: square;
+        }
+        .stil4 {
+            /* DEFAULT */
+            /* list-style-position: outside; */
+        }
+        ul.stil4>li {
+            border: 1px solid black;
+        }
+        .stil5 {
+            /* DEFAULT */
+            list-style-position: inside;
+            /* padding: 0; */
+        }
+        ul.stil5>li {
+            border: 1px solid black;
+        }
+        ul.stil6 {
+            list-style-image: url(pikachu.png);
+        }
+        ul.stil7>li::marker {
+            color: blue;
+            font-size: 2em;
+        }
+
+        ul.stil8 {
+            list-style: none;
+            padding: 0;
+            border: 1px solid gainsboro;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        ul.stil8>li {
+            padding: 12px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        ul.stil8>li:last-child {
+            border-bottom: none;
+        }
+
+        ul.stil8>li:nth-child(2n) {
+            background-color: #f0f0f0;
+        }
+
+        ul.stil8>li:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h4>Extravaganza Bol Malzemos Ultra Plus Premium Pro Max Her Şey Ultra Dahil Sahibinden Doktordan 0km Organik Hatasız Boyasız Alana Hayırlı Olsun</h4>
+    <ul class="stil8">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Marker Özelleştirme</h4>
+    <ul class="stil7">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Marker Resmi</h4>
+    <ul class="stil6">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Marker Pozisyonları (İç)</h4>
+    <ul class="stil5">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Marker Pozisyonları (Dış)</h4>
+    <ul class="stil4">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>List Stil Tipi</h4>
+    <ul class="stil3">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Stillerinden Arındırılmış</h4>
+    <ul class="stil2">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Marker'sız Liste</h4>
+    <ul class="stil1">
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+    <h4>Standart Görünüm</h4>
+    <ul>
+        <li>Cağ Kebap</li>
+        <li>Lahmacun</li>
+        <li>Döner Dürüm</li>
+        <li>Makarna</li>
+        <li>Mantı</li>
+        <li>Pideli Köfte</li>
+    </ul>
+</body>
+</html>
