@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pozisyonlama 2</title>
+    <style>
+        .kutu {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .poke {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* mutlak pozisyonlama yapılan bir elementin konumu normalde tarayıcının görünen kısmına göre yapılır. ANCAK parent elementinde position: relative kuralı varsa onun sınırları dahilinde konumlama yapılacaktır. */
+
+        .uzun {
+            position: relative;
+        }
+
+        .agac {
+            position: absolute;
+            left: calc(50% - 50px);
+            top: calc(50% - 50px);
+            z-index: -1;
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Başlık</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptate amet itaque, vitae placeat at sit quae
+        nesciunt nemo nam quos expedita laborum eius odio aperiam velit libero. Sunt, repellat?</p>
+    <div class="kutu">
+        <img class="poke" src="pikachu.png" alt="Pokemon">
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cum provident nobis animi vitae maxime a minima
+        sapiente sed adipisci sunt, explicabo qui esse commodi ad aspernatur. Temporibus, distinctio dolor.</p>
+    <p class="uzun">
+        <img class="agac" src="palmiye.png" alt="Ağaç" height="100">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor eaque cum explicabo nisi quae, ratione nihil! Sunt, quas harum? Cupiditate quis, quas rem harum neque quos animi et placeat libero itaque sunt eaque voluptatibus aut error molestiae, quam soluta? Laboriosam repellendus velit harum, tempore modi numquam labore sequi. Sequi, fuga modi minus natus mollitia perferendis quia ad autem atque eligendi aspernatur, sapiente, voluptas veniam quod ut facilis esse sint placeat. Corporis magnam adipisci ullam! Mollitia tenetur repudiandae natus, unde, facere labore ullam nesciunt dolorem hic impedit officia fugiat commodi tempora facilis cupiditate velit! Ratione sequi delectus laborum? Cum tempora quasi at facere a consectetur molestias vel distinctio excepturi ducimus iure dolor nulla repellendus ipsa, assumenda repudiandae neque, deserunt iste incidunt soluta, officiis earum sint iusto voluptate. Totam ex assumenda nisi voluptatibus? Eius vitae molestiae ab. Repellat placeat, iste officiis dolore quia commodi minus soluta quasi possimus, delectus, fugit exercitationem.</p>
+    <p>Corporis saepe consectetur minus libero numquam. Nihil optio velit tempora autem dolores maiores nam dicta ipsa
+        possimus quam at, fugiat ab ea recusandae magni nulla rem atque. Architecto, similique esse?</p>
+    <p>A inventore consectetur modi sit nobis debitis! Repellat aut veniam consequatur iure sit porro omnis provident
+        tenetur illum vitae. Ex, facilis facere earum et quidem accusantium nisi animi tenetur nostrum?</p>
+    <p>Fugiat perferendis sint eaque, excepturi explicabo repellendus odio amet at, veniam accusamus vitae vel?
+        Veritatis, quae possimus quidem amet debitis iste consequuntur accusamus at cumque repellat voluptatum, cum
+        eveniet quo.</p>
+    <p>Tempora accusantium optio molestiae sequi. Exercitationem minima magnam quia repellat odio, id tempora vel quas
+        odit mollitia sit saepe autem non obcaecati velit fugit eius ipsa nisi sunt! Quia, aperiam.</p>
+    <p>Dignissimos recusandae doloremque ullam iste natus cupiditate. Molestiae sit explicabo facilis quis beatae
+        eveniet ab unde aperiam sequi, quam provident deleniti porro corporis, vel obcaecati ex voluptatem officiis ea
+        aliquam!</p>
+    <p>Adipisci repellendus totam accusantium quisquam. Optio veritatis perferendis dolorum consectetur explicabo.
+        Eligendi quas tempora vitae reiciendis, assumenda, non ea quam nobis debitis molestias amet dolorum porro, eos
+        minus accusamus consequuntur?</p>
+    <p>Expedita consequatur sapiente facere suscipit minus cupiditate ipsa dolorem adipisci minima consectetur rem
+        perspiciatis, culpa tempora sint temporibus illum illo nisi quibusdam! Asperiores molestias soluta saepe maiores
+        exercitationem, tempore voluptas?</p>
+    <p>Pariatur dignissimos odio saepe nemo, explicabo, praesentium id similique earum nihil excepturi sit velit
+        sapiente unde delectus, perferendis quaerat blanditiis esse minima quod quia mollitia quo. Porro dolor molestiae
+        fuga.</p>
+    <p>Labore libero facilis voluptatem praesentium? Dicta temporibus ipsa dignissimos, eveniet amet dolores vel
+        consequuntur? Nam sunt quaerat iure repellendus quas aut repellat eveniet voluptas, sed magnam rerum
+        exercitationem delectus nihil?</p>
+</body>
+
+</html>
