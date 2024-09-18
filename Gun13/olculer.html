@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ölçüler</title>
+    <style>
+        html {
+            /* 1rem'i belirleyen kural */
+            font-size: 20px;
+        }
+        .cubuk1 {
+            height: 20px;
+            background-color: purple;
+            width: 96px;
+        }
+        .cubuk2 {
+            height: 20px;
+            background-color: pink;
+            width: 6rem;
+        }
+        .cubuk3 {
+            height: 20px;
+            background-color: green;
+            width: 6em;
+        }
+        .cubuk2-kapsayici {
+            font-size: 10px;
+        }
+        .cubuk3-kapsayici {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ölçü Birimleri</h1>
+    <h2>Genişliği 96px olan bir div</h2>
+    <div class="cubuk1"></div>
+    <h2>Genişliği 6rem olan bir div</h2>
+    <div class="cubuk2-kapsayici">
+        <div class="cubuk2"></div>
+    </div>
+    <div class="cubuk3-kapsayici">
+        <h2>Genişliği 6em olan bir div</h2>
+        <div class="cubuk3"></div>
+    </div>
+
+    <hr>
+    <!-- .soru1>.soru1-a>.soru1-b>.soru1-c -->
+    <style>
+        .soru1 { font-size: 4px; }
+        .soru1-a { font-size: 1.5em; }
+        .soru1-b { font-size: 150%; /* 1.5em; */ }
+        .soru1-c { font-size: 1.5em; }
+    </style>
+    <div class="soru1">
+        <div class="soru1-a">
+            <div class="soru1-b">
+                <div class="soru1-c">
+                    <!-- bu yazının hesaplanmış boyutu kaç pixel'dir? -->
+                    SORU 1: MOLA YAKLAŞIYOR (4x1.5x1.5x1.5)
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>
+<!-- 1px: ekrandaki en ufak nokta (önemli açıklama: mobil cihazlarda, cihaza göre ölçekleme sağlamak için viewport meta tagı kullanılır ve px hesaplaması 2-3 noktaya karşılık gelecek şekilde hesaplanabilir) 
+        
+1rem: "html" kök elementinin font-size değeridir. Birçok tarayıcıda html elementi 16px varsayılan bir font değerine sahiptir.
+
+1em: Bir elementin parent'ından miras aldığı font-size'ına karşılık gelir. -->

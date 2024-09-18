@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .kutu1 {
+            height: 60px;
+            width: 20%;
+            background-color: crimson;
+            margin-bottom: .5rem;
+            /* transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: .5s; */
+            transition: all 1s ease .5s;
+        }
+
+        .kutu1:hover {
+            height: 180px;
+            background-color: orange;
+        }
+
+        .yalandan {
+            opacity: 0;
+            transition: all 1s ease .5s;
+        }
+
+        .kutu1:hover>.yalandan {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="kutu1">
+        <div class="yalandan">
+            abc
+        </div>
+    </div>
+    <div class="kutu1"></div>
+    <div class="kutu1"></div>
+    <div class="kutu1"></div>
+    <div class="kutu1"></div>
+</body>
+</html>
