@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alanı Doldurmaca</title>
+    <style>
+        .container {
+            display: flex;
+            border: 10px dashed black;
+            height: 400px;
+        }
+        .sutun {
+            flex: 1;
+        }
+        .s1 {
+            background-color: yellow;
+        }
+        .s2 {
+            background-color: cornflowerblue;
+            /* flex: 3; */
+        }
+        .s3 {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <h2>Eşit Genişlikli Sütunlar</h2>
+    <div class="container">
+        <!-- div.sutun*3>{SÜTUN $} -->
+        <div class="sutun s1">SÜTUN 1</div>
+        <div class="sutun s2">SÜTUN 2</div>
+        <div class="sutun s3">SÜTUN 3</div>
+    </div>
+</body>
+</html>
