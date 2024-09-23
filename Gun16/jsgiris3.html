@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tıkladıkça Büyüyen Kutu</title>
+    <style>
+        #kutu {
+            background-color: black;
+            color: white;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: crosshair;
+            border-radius: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="kutu" onclick="yap()">100</div>
+
+    <script>
+        let k = document.getElementById("kutu");
+        let x = 100;
+
+        // yap adında bir fonksiyon tanımlıyoruz
+        function yap() {
+            x = x + 50; // x'in değerini 1 fazlasına eşitle
+            k.textContent = x;
+            k.style.width = x + "px";
+            k.style.height = x + "px";
+        }
+    </script>
+</body>
+</html>

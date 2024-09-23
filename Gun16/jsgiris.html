@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript Öğreniyorum</h1>
+    <p>
+        <!-- Buranın içini javascript 
+         ile değiştirebilir miyiz? -->
+    </p>
+
+    <script>
+        // burası javascript bölgesi
+        
+        // javascript'te html dökümanına karşılık gelen
+        // document adında bir nesne vardır. (çizim yaparken 
+        // her şeyin başı olarak DOM ağacının tepesinde gösterdik)
+        // document nesnesi üzerinden mevcut sayfadaki dökümanının
+        // tüm elementlerine erişebiliriz (belirli yöntemlerle)
+
+        // sayfadaki ilk p elementine eriş ve içinde metni değiştir
+
+        // nesneleri değişkenlerde taşıyabiliriz
+        let ilkParag = document.querySelector("p");
+
+        // nesnelerin özelliklerine . operatörü ile erişirizi
+        // = operatörü ile yeni değerler veririz
+        ilkParag.textContent = "Biz kimseyi yarı yolda bırakmadık onlar müsait bir yerde indiler... - Bir Kamyon Arkası Sözü";
+
+        // elementlerin özelliklerinin özelliklerine erişip değiştirebiliriz
+        ilkParag.style.color = "purple";
+        
+        // DOM ağacının ilk dallarından biri olan body'ye bu şekilde erişebiliriz
+        document.body.style.background = "linear-gradient(to right, orange, white)";
+
+        // PROGRAMLAMA:
+        // KOMUTLARIN BELLİ SIRADA BELİRLİ BİR AMAÇ İÇİN ÇALIŞTIRILMASI (ALGORİTMA İLE)
+        // KOMUTLAR İNSAN DİLİNİ YAKIN BİR DİLLE
+        // BİLGİSAYARA İŞ YAPMASI İÇİN FISILDAMAKTIR
+        // alert("Hoooop ... palaaa!!!");
+        // alert("Hoşgeldin :)");
+        // alert metodu ingilizcedeki anlamına yakın bir şekilde
+        // bir uyarı mesajı vermek için kullanılır
+    </script>
+</body>
+</html>
