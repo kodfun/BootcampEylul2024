@@ -10,3 +10,7 @@ function yaz(html = "") {
 function ciz(html = "") {
     document.body.innerHTML += html + "<hr>";
 }
+
+function temizle() {
+    document.body.innerHTML = "";
+}

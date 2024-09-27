@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment & Decrement</title>
+</head>
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        let a = 1;
+        a++; // a += 1 arasındaki fark nedir?
+        ciz(a); // 2
+
+        let b = 1;
+        ciz(b++ * 3); //3 : b değeri kullanım sonrası arttırılır
+        ciz(b); // 2
+
+        let c = 5;
+        ciz(c++); // 5
+        ciz(c);
+
+        let d = 3;
+        ciz(d++ * d);
+
+        let e = 3;
+        ciz(++e * e);
+        
+        let f = 10;
+        ciz(f-- + --f);
+
+        let g = 3;
+        yaz(++g - g--);
+        ciz(g);
+
+        let h = 4;
+        h = h++;
+        ciz(h);
+        
+        let i = 7;
+        i = ++i;
+        ciz(i);
+
+        temizle();
+        let j = 5;
+        j *= j++; // j = j * j++
+        ciz(j);
+
+        let k = 0;
+        //  0
+        yaz(k++ - --k); 
+        ciz(k);
+
+        let l = 3;
+        l = l + l * l++;
+        ciz(l);
+
+        // debugger;
+        let m = 2;
+        m = m * (m + ++m);
+        ciz(m);
+
+        // mantıksal operatörler konusu işlendikten sonra bakınız
+        let n = 3;
+        let sonuc = n++ == 3 || ++n == 5;
+        yaz(sonuc);
+        ciz(n);
+
+        // bu notu ileride okuyun: veya (||) operatörü soldaki değer true ise sağına hiç bakmaz, değerlendirmeye almaz
+
+        // ve (&&) operatörü sol taraf false ise umudunu yitirir
+        // sağı hiç değerlendirmeye almaz
+
+        let o = 40;
+        yaz(o < 39 && ++o == 41);
+        ciz(o);
+
+        let p = 2;
+
+        if (++p == p++)
+            ciz(p);
+
+        // KAFASI KARIŞANLARA
+        // x++ önce x değeri kullanılır sonra arttırılır
+        // ++x önce arttırılır sonra artmış x değeri kullanılır
+    </script>
+</body>
+</html>
+
+<!-- https://learn.microsoft.com/en-us/cpp/c-language/precedence-and-order-of-evaluation?view=msvc-170 -->
