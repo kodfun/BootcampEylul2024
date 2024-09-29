@@ -1,0 +1,11 @@
+* domain ve hosting alma
+* domaini nameserver'lara yönlendirme
+* plesk & cpanel kullanımı
+* dosya yöneticisi kullanımı
+* filezilla kullanarak ftp yoluyla dosya gönderme/alma
+* hosting'e panelden ücretsiz ssl kurulumu (https://)
+* subdomain oluşturma
+
+
+İLERİDE YAPALIM DEDİK:
+Domaini ya da subdomain'i github'a bağlama

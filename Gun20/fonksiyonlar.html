@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fonksiyonlar</title>
+</head>
+<body>
+
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        /*
+        DÖRT ÇEŞİT FONKSİYONU ÖRNEKLEYELİM
+        1. PARAMETRE ALMAYAN DEĞER DÖNDÜRMEYEN
+        2. PARAMETRE ALMAYAN DEĞER DÖNDÜREN
+        3. PARAMETRE ALAN DEĞER DÖNDÜRMEYEN
+        4. PARAMETRE ALAN DEĞER DÖNDÜREN
+        */
+
+        // parametre almayan ve değer döndürmeyen
+        function ekranaTarihiVeSaatiYazdir() {
+            let suAn = new Date();
+            ciz(suAn.toLocaleString());
+        }
+
+        ekranaTarihiVeSaatiYazdir();
+
+        // parametre almayan değer döndüren
+        function ayinGunu() {
+            let suAn = new Date();
+            return suAn.getDate();
+        }
+
+        let kacinci = ayinGunu();
+        ciz("Bugün ayın " + kacinci + ". günüdür.");
+
+        // parametre alan değer döndürmeyen
+        // işçi fonksiyon: aldığı renk koduyla
+        // arka planı boyar.
+        function arkaplaniBoya(renk) {
+            document.body.style.background = renk;
+        }
+
+        arkaplaniBoya("linear-gradient(to right, #333, #777)");
+
+        // aldığı sayının bir fazlasını döndürür
+        // matematikteki "f(x) = x + 1" gibi
+        // parametre alan ve değer döndüren
+        function birFazlasi(x) {
+            return x + 1;
+        }
+
+        let sayi = 3;
+        sayi = birFazlasi(sayi);
+        ciz(sayi); // 4
+
+
+    </script>
+</body>
+</html>
