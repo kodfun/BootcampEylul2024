@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Hesabı</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Dikdörtgen Alan Hesabı</h1>
+        <div class="mb-3">
+            <label class="form-label" for="gen">Genişlik</label>
+            <input class="form-control" type="number" id="gen" value="0">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="yuk">Yükseklik</label>
+            <input class="form-control" type="number" id="yuk" value="0">
+        </div>
+        <div class="alert alert-info">
+            Özellikleri girilen dikdörtgenin alanı: <strong><span id="sonuc">0</span>br²</strong>
+        </div>
+    </div>
+
+    <script>
+        // önce tezgaha malzemeleri dökelim
+        const inputGen = document.getElementById("gen");
+        const inputYuk = document.getElementById("yuk");
+        const spnSonuc = document.getElementById("sonuc");
+
+        // veri nesnemizi oluşturalım
+        let dikdortgen = {
+            genislik: 0,
+            yukseklik: 0,
+            alan: function() {
+                return this.genislik * this.yukseklik;
+            }
+        }
+
+        // ihtiyaç duyacağımız fonksiyonları tanımlayalım
+        function sonucuGuncelle() {
+            dikdortgen.genislik = inputGen.value;
+            dikdortgen.yukseklik = inputYuk.value;
+            spnSonuc.textContent = dikdortgen.alan();
+        }
+
+        // event tanımlaması: ne değişince ne olsun?
+        inputGen.oninput = sonucuGuncelle;
+        inputYuk.oninput = sonucuGuncelle;
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nesneler</title>
+</head>
+
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+
+        let masa = {
+            yukseklik: 71,
+            renk: "white",
+            yukselt: function () {
+                this.yukseklik++;
+            },
+            alcalt: function () {
+                this.yukseklik--;
+            }
+        };
+
+        yaz("Yükseklik: " + masa.yukseklik);
+        yaz("Renk: " + masa.renk);
+
+        // bakalım yükseltecek 
+        masa.yukselt();
+        yaz("Yeni yüksekliği: " + masa.yukseklik);
+
+        // bakalım yükseltecek 
+        masa.alcalt();
+        masa.alcalt();
+        masa.alcalt();
+        yaz("Yeni yüksekliği: " + masa.yukseklik);
+    </script>
+</body>
+
+</html>
