@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Görev 1</title>
+</head>
+<body>
+    <h1>Görev</h1>
+    <ul>
+        <li>6 elemanlı bir sayı dizisi oluştur: 
+            4, 8, 15, 16, 23, 42</li>
+        <li>başına 10 ekle</li>
+        <li>sonuna 99 ekle</li>
+        <li>2. indeksten başlayarak 3 adet sayı sil</li>
+        <li>3. indekse 77 sayısını sok (mevcutlara dokunma)</li>
+        <li>2. indeksteki sayıyı 66 olarak güncelle</li>
+        <li>başını sil ve silineni yazdır</li>
+        <li>sonunu sil ve silineni yazdır</li>
+    </ul>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        ciz();
+
+        let dizi = [4, 8, 15, 16, 23, 42];
+
+        ciz("dizi elemanları: " + dizi.toString());
+        
+        dizi.unshift(10); // başa ekler
+        dizi.push(99); // sona ekler
+        ciz("dizi elemanları: " + dizi);
+
+        yaz("2. indeksten başlayarak 3 adet sayı sil:");
+        dizi.splice(2, 3);
+        ciz("dizi elemanları: " + dizi);
+
+        yaz("3. indekse 77 koy:");
+        dizi.splice(3, 0, 77);
+        ciz("dizi elemanları: " + dizi);
+        
+        yaz("dizinin 2 nolu öğesini değiştir:");
+        dizi[2] = 66;
+        ciz("dizi elemanları: " + dizi);
+
+        // başı sil ve silineni yazdır
+        yaz("başı: " + dizi.shift());
+        ciz("dizi elemanları: " + dizi);
+
+        // sonu sil ve silineni yazdır
+        yaz("sonu: " + dizi.pop());
+        ciz("dizi elemanları: " + dizi);
+
+        // sonraki derse neler yapacağız:
+        // döngülerle dizi elemanlarına erişme (belki döngüler konusuna da bırakabiliriz)
+        // dizi metotları
+        // dizilerle bir takım işlemler
+        // dizilerde nesne taşıma vs
+
+        // ödev: https://www.w3schools.com/js/js_arrays.asp linkine göz gezdirin
+    </script>
+</body>
+</html>
