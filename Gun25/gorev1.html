@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Görev 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-3">Gezelim Görelim</h1>
+        <form id="frmUlke" class="d-flex gap-2">
+            <div class="flex-fill">
+                <input id="txtUlke" class="form-control" type="text" placeholder="Ülke.." required>
+            </div>
+            <div>
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <ul id="ulkeler" class="list-group mt-2"></ul>
+    </div>
+
+    <script>
+        const dizi = ["Fransa", "İtalya", "Avustralya", "Amerika", "Almanya", "İsviçre", "Kanada", "Japonya", "Papua Yeni Gine", "Finlandiya"];
+
+        const ul = document.getElementById("ulkeler");
+
+        function listele() {
+            ul.innerHTML = ""; // önce ul listesini boşalt
+
+            dizi.forEach((ulke, indeks) => {
+                const li = document.createElement("li");
+                li.textContent = ulke;
+                li.className = "list-group-item";
+
+                li.ondblclick = () => {
+                    dizi.splice(indeks, 1);
+                    listele();
+                };
+
+                ul.append(li);
+            });
+        }
+
+        // GÖREV: form submit aşamasında submit event'ini iptal et
+        // onun yerine ülke kutusundaki değeri al ve dizinin başına ekle
+        // ve yukarıdaki listeleme komutunu çalıştır
+        const frm = document.getElementById("frmUlke");
+        const txt = document.getElementById("txtUlke");
+
+        function formTeslim(event) {
+            event.preventDefault(); // formu teslim etme
+            let ulkeAd = txt.value;
+            dizi.unshift(ulkeAd);
+            txt.value = "";
+            listele();
+        }
+
+        // form üzerinde submit eventi oluşunca formTeslim
+        // adındaki fonksiyonu çağır
+        frm.addEventListener("submit", formTeslim);
+
+        listele(); // sayfa ilk yüklendiğine listele
+    </script>
+</body>
+
+</html>

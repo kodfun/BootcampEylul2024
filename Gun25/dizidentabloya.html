@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diziden Tabloya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Öğrenciler</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad</th>
+                    <th>Yaş</th>
+                    <th>Şehir</th>
+                    <th>Hobi</th>
+                </tr>
+            </thead>
+            <tbody id="veri"></tbody>
+        </table>
+    </div>
+
+    <script>
+        let dizi = [
+            { ad: "KodFun", yas: 37, sehir: "Ankara", hobi: "Sinema" },
+            { ad: "Altuğ", yas: 50, sehir: "İstanbul", hobi: "Müzik" },
+            { ad: "Gürkan", yas: 32, sehir: "Antalya", hobi: "Satranç" },
+            { ad: "Sinan", yas: 29, sehir: "Ordu", hobi: "Maket Yapmak" },
+            { ad: "Diana", yas: 33, sehir: "İstanbul", hobi: "Yeni yerler keşfetmek" },
+            { ad: "Feyza", yas: 21, sehir: "Bursa", hobi: "Gitar çalmak"},
+            { ad: "Ahmet", yas: 33, sehir: "Gaziantep", hobi: "Yürüyüş" },
+            { ad: "Meryos", yas: 19, sehir: "İstanbul", hobi: "Ukulele calmak" },
+            { ad: "Burak", yas: 33, sehir: "Ankara", hobi: "Kaset koleksiyonu" },
+            { ad: "Güneş", yas: 39, sehir: "Aydın", hobi: "Balık tutmak" },
+            { ad: "Metin", yas: 38, sehir: "Mersin", hobi: "Film" },
+            { ad: "Kaan", yas: 22, sehir: "Afyon", hobi: "Drift Yapmak" },
+            { ad: "Esin", yas:22, sehir:"Adana", hobi:"Edebiyat" }
+        ];
+
+        const tbody = document.getElementById("veri");
+
+        for (let i = 0; i < dizi.length; i++) {
+            const no = i + 1;
+            const kisi = dizi[i];
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("th");
+            td1.textContent = no;
+            const td2 = document.createElement("td");
+            td2.textContent = kisi.ad;
+            const td3 = document.createElement("td");
+            td3.textContent = kisi.yas;
+            const td4 = document.createElement("td");
+            td4.textContent = kisi.sehir;
+            const td5 = document.createElement("td");
+            td5.textContent = kisi.hobi;
+            td5.className = "fst-italic";
+            tr.append(td1, td2, td3, td4, td5);
+            tbody.append(tr);
+        }
+    </script>
+</body>
+</html>

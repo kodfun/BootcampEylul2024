@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Elementi Oluşturma</title>
+</head>
+<body>
+     
+    <script>
+        const baslik = document.createElement("h1");
+        baslik.textContent = "Bir Başlık";
+        document.body.append(baslik);
+
+        // p elementi oluştur
+        const parag = document.createElement("p");
+        parag.textContent = "Hocam hiç bir şey gelmedi aklıma. JavaScript öğreniyorum olsun. ";
+
+        // oluşan elementi DOM ağacına eklemeniz lazım
+        document.body.append(parag);
+
+        const guclu = document.createElement("strong");
+        guclu.textContent = "Bu cümleyi koyamayacağımı, paragrafın sonuna ekleyemeyeceğimi iddia ettiler.";
+        parag.append(guclu);
+
+        const vurgulu = document.createElement("em");
+        vurgulu.textContent = "Bilmiyorum hocam! ";
+        parag.prepend(vurgulu);
+
+        // başlıktan sonra yatay çizgi ekleme
+        const cizgi = document.createElement("hr");
+        baslik.after(cizgi);
+
+        // developer tools üzerinden elementi seç ve properties sekmesinden kontrol et!
+        // baslik.abidik = "tencere tava";
+    </script>
+</body>
+</html>
