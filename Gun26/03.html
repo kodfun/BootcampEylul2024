@@ -1,0 +1,50 @@
+<!-- GÖREV 3: Parametre olarak sayının karesini hesaplayan fonksiyonu arrow
+ function yöntemiyle tanımla ve bir değişkende sakla. Bu fonskiyonu kullanarak
+ 1'den 10 kadar olan sayıların karesi html'de oluşturduğun ul'un içine li'ler halinde
+ ekle. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Görev 3</title>
+</head>
+<body>
+    <!-- YÖNTEM 1: Oğuzhan -->
+    <ul id="liste1"></ul>
+
+    <script>
+        const karesi = x => x * x;
+        const ul1 = document.getElementById("liste1");
+
+        for (let i = 1; i <= 10; i++) {
+            // ul1.innerHTML += "<li>" + karesi(i) + "</li>";
+            ul1.innerHTML += `<li>${karesi(i)}</li>`;
+        }
+    </script>
+
+    <!-- YÖNTEM 2 -->
+    <ul id="liste2"></ul>
+
+    <script>
+        const karesiAl = x => Math.pow(x, 2);
+        const ul2 = document.getElementById("liste2");
+
+        for (let i = 1; i <= 10; i++)
+            ul2.innerHTML += "<li>" + karesiAl(i) + "</li>";
+    </script>
+
+    <!-- YÖNTEM 3-->
+     <ul id="liste3"></ul>
+
+     <script>
+        const kareHesapla = sayi => sayi ** 2;
+        const ul3 = document.getElementById("liste3");
+
+        for (let i = 1; i <= 10; i++) {
+            const li = document.createElement("li");
+            li.textContent = kareHesapla(i);
+            ul3.appendChild(li);
+        }
+     </script>
+</body>
+</html>

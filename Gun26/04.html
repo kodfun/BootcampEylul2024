@@ -1,0 +1,33 @@
+<!-- GÖREV4: İçinde 1 yazan buton koy, her basışında değeri 1 artsın.
+ Önemli not: biri olur da html üzerinden sayıyı 10 yapmaya karar verirse
+ program kendini ona göre adapte etsin. Yani tıklayınca 11 12 13 .. şeklinde 
+ artsın. -->
+
+ <button id="btn1">1</button>
+ <button id="btn2">100</button>
+ <button id="btn3">1000</button>
+
+ <script>
+    // faruk
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+    const btn3 = document.getElementById("btn3");
+
+    btn1.onclick = function() {
+        btn1.textContent = Number(btn1.textContent) + 1;
+    }
+
+    // this keyword'ünü eventler'de event'e konu olan
+    // elemente karşılık gelir ANCAK arrow function'da işe yaramaz
+    btn2.onclick = function() {
+        this.textContent = Number(this.textContent) + 1;
+    };
+
+    // isimli fonksiyon ile
+    function arttir() {
+        this.textContent = Number(this.textContent) + 1;
+    }
+
+    // btn3.addEventListener("click", arttir);
+    btn3.onclick = arttir;
+ </script>

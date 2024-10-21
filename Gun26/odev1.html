@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev</title>
+    <style>
+        .butonlar {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ödev 1</h1>
+    <p>JavaScript ile 100 buton koy ve her birinde 0 yazsın.</p>
+    <p>Hangisine tıklanırsa onun değeri 1 artsın.</p>
+    <p>CSS ile bu 100 butonu 10X10 luk grid olacak şekilde göster</p>
+
+    <div id="sonuc" class="butonlar"></div>
+
+    <script>
+        const sonuc = document.getElementById("sonuc");
+
+        for (let i = 0; i < 100; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = 0;
+            sonuc.appendChild(btn);
+
+            btn.onclick = function() {
+                this.textContent = Number(this.textContent) + 1;
+            }
+        }
+    </script>
+</body>
+</html>
