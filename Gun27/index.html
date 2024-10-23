@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapılacaklar Uygulaması</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="row mt-5 gy-2 gx-3 align-items-center">
+            <div class="col">
+                <input type="text" class="form-control" id="task" placeholder="Ne yapacaksın?">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Ekle</button>
+            </div>
+        </form>
+
+        <div id="todos" class="mt-4 todos">
+
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+
+                <div class="col-auto">
+                    <input type="checkbox">
+                </div>
+                <div class="col ps-0 d-flex align-items-center lead">
+                    Projeyi tamamla
+                </div>
+
+            </div>
+
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+
+                <div class="col-auto">
+                    <input type="checkbox">
+                </div>
+                <div class="col ps-0 d-flex align-items-center lead">
+                    Yürüyüş yap
+                </div>
+
+            </div>
+
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+
+                <div class="col-auto">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="col ps-0 d-flex align-items-center lead">
+                    Faturaları öde
+                </div>
+
+            </div>
+
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+
+                <div class="col-auto">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="col ps-0 d-flex align-items-center lead">
+                    Vitaminlerini al
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- geliştirmeler: 
+ 1. ekran çok geniş olursa içeriğin genişliğini sabit tut (max-width) 
+ 2. form'u large yap (bootstrap sizing)
+ 3. ekle yazısı yerine belki font-awesome kullanılabilir
+ 4. eğer hiç bir görev yoksa "henüz bir görev eklenmemiş" gibi bir şey yazabilir
+ -->
