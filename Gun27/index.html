@@ -18,63 +18,19 @@
 
     <div class="container">
 
-        <form class="row mt-5 gy-2 gx-3 align-items-center">
+        <form id="frmTask" class="row mt-5 gy-2 gx-3 align-items-center">
             <div class="col">
-                <input type="text" class="form-control form-control-lg" id="task" placeholder="Ne yapacaksın?">
+                <input type="text" class="form-control form-control-lg" id="task" placeholder="Ne yapacaksın?" required>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-lg btn-primary">Ekle</button>
             </div>
         </form>
 
-        <div id="todos" class="mt-4 todos">
-
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
-
-                <div class="col-auto">
-                    <input type="checkbox" class="form-check-input">
-                </div>
-                <div class="col ps-0 d-flex align-items-center lead">
-                    Projeyi tamamla
-                </div>
-
-            </div>
-
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
-
-                <div class="col-auto">
-                    <input type="checkbox" class="form-check-input">
-                </div>
-                <div class="col ps-0 d-flex align-items-center lead">
-                    Yürüyüş yap
-                </div>
-
-            </div>
-
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
-
-                <div class="col-auto">
-                    <input type="checkbox" class="form-check-input" checked>
-                </div>
-                <div class="col ps-0 d-flex align-items-center lead">
-                    Faturaları öde
-                </div>
-
-            </div>
-
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-secondary bg-primary-subtle">
-
-                <div class="col-auto">
-                    <input type="checkbox" class="form-check-input" checked>
-                </div>
-                <div class="col ps-0 d-flex align-items-center lead">
-                    Vitaminlerini al
-                </div>
-
-            </div>
-
-        </div>
+        <div id="todos" class="mt-4 todos"></div>
     </div>
+
+    <script src="site.js"></script>
 </body>
 
 </html>
