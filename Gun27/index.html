@@ -5,28 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yapılacaklar Uygulaması</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1 mx-auto">Yapılacaklar Listem</span>
+        </div>
+      </nav>
+
     <div class="container">
 
         <form class="row mt-5 gy-2 gx-3 align-items-center">
             <div class="col">
-                <input type="text" class="form-control" id="task" placeholder="Ne yapacaksın?">
+                <input type="text" class="form-control form-control-lg" id="task" placeholder="Ne yapacaksın?">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary">Ekle</button>
+                <button type="submit" class="btn btn-lg btn-primary">Ekle</button>
             </div>
         </form>
 
         <div id="todos" class="mt-4 todos">
 
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
 
                 <div class="col-auto">
-                    <input type="checkbox">
+                    <input type="checkbox" class="form-check-input">
                 </div>
                 <div class="col ps-0 d-flex align-items-center lead">
                     Projeyi tamamla
@@ -34,10 +40,10 @@
 
             </div>
 
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
 
                 <div class="col-auto">
-                    <input type="checkbox">
+                    <input type="checkbox" class="form-check-input">
                 </div>
                 <div class="col ps-0 d-flex align-items-center lead">
                     Yürüyüş yap
@@ -45,10 +51,10 @@
 
             </div>
 
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
 
                 <div class="col-auto">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" class="form-check-input" checked>
                 </div>
                 <div class="col ps-0 d-flex align-items-center lead">
                     Faturaları öde
@@ -56,10 +62,10 @@
 
             </div>
 
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary">
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-secondary bg-primary-subtle">
 
                 <div class="col-auto">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" class="form-check-input" checked>
                 </div>
                 <div class="col ps-0 d-flex align-items-center lead">
                     Vitaminlerini al
