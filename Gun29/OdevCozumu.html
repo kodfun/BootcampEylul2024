@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev Çözümü</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-image: linear-gradient(to bottom right, #FF61D2, #FE9090);
+            padding: 4rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm">
+        <label for="ad">Adınız</label>
+        <input id="ad" type="text" required>
+        <button>Beni Hatırla</button>
+    </form>
+
+    <script>
+        const frm = document.getElementById("frm");
+        const txtAd = document.getElementById("ad");
+
+        if (localStorage["veri"]) {
+            const hatirlananAd = localStorage["veri"];
+            hosgeldin(hatirlananAd);
+        }
+
+        function hosgeldin(ad) {
+            frm.innerHTML = `Hoşgeldin ${ad} (<a href="#" onclick="unut()">Beni Unut</a>)`;
+        }
+
+        function unut() {
+            localStorage.removeItem("veri");
+            location.reload();
+        }
+
+        frm.onsubmit = function(event) {
+            event.preventDefault();
+            const ad = txtAd.value;
+            localStorage["veri"] = ad;
+            frm.textContent = `Merhaba ${ad}, seni hatırlayacağım..`;
+            setTimeout(() => location.reload(), 1500);
+        };
+    </script>
+</body>
+</html>

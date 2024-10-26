@@ -32,18 +32,36 @@ function displayTodos() {
         const todo = todos[i];
 
         divTodos.innerHTML += `
-            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle">
+            <div class="row mb-3 border border-secondary rounded py-3 px-1 mx-0 bg-primary-subtle ${todo.done ? "done" : "undone"}">
 
                 <div class="col-auto">
-                    <input type="checkbox" class="form-check-input" ${todo.done ? "checked" : ""}>
+                    <input type="checkbox" class="form-check-input" ${todo.done ? "checked" : ""} onchange="toggleItem(${i})">
                 </div>
-                <div class="col ps-0 d-flex align-items-center lead">
+                <div class="col ps-0 d-flex align-items-center lead todo-title">
                     ${todo.title}
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-danger px-3" onclick="deleteItem(${i})">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
                 </div>
 
             </div>
         `;
     }
+}
+
+function toggleItem(index) {
+    const item = todos[index];
+    item.done = !item.done;
+    sortAndSave();
+    displayTodos();
+}
+
+function deleteItem(index) {
+    todos.splice(index, 1);
+    sortAndSave();
+    displayTodos();
 }
 
 function addTask() {
