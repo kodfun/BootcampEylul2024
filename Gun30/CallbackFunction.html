@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beni Geri Ara!</title>
+    <style>
+        body {
+            background-color: gray;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        function merhaba() {
+            document.body.innerHTML += "<p>Merhaba</p>";
+        }
+
+        function verilenMetoduKereCagir(fonk, adet) {
+            for (let i = 0; i < adet; i++) {
+                fonk(); // argüman olarak verilen fonksiyonu "CALL" ediyoruz
+            }
+        }
+
+        verilenMetoduKereCagir(merhaba, 4);
+    </script>
+</body>
+</html>
