@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dizi Metotları</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        body {
+            background: linear-gradient(90deg, #ccc, gray);
+            font-family: "Inter", sans-serif;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dizi Metotları</h1>
+
+    <script>
+        const meyveler = ["kavun", "kiraz", "erik", "vişne", "kivi", "portakal", "nar"];
+
+        function yaz(str) {
+            const pre = document.createElement("pre");
+            pre.textContent = str;
+            document.querySelector("h1").after(pre);
+        }
+
+        // yaz(meyveler.toString());
+        yaz(meyveler);
+
+        let birlesik = meyveler.join(" ⇹ ");
+        yaz(birlesik);
+
+        // 1-3 aralığındaki elemanlar
+        yaz(meyveler.slice(1, 4)); // 1 dahil 4 hariç
+
+        // tüm öğeleri satır satır indeks numaralarıyla
+        let tumu = "";
+
+        for (let i = 0; i < meyveler.length; i++)
+            tumu += i + ": " + meyveler[i] + "\n";
+
+        yaz(tumu);
+
+        // erik index
+        let erikIndeks = meyveler.indexOf("erik");
+        yaz("eriğin indeksi: " + erikIndeks);
+
+        // erik ve sonrası
+        yaz(meyveler.slice(erikIndeks));
+
+        // son 2 eleman?
+        yaz(meyveler.slice(-2));
+
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Tekrar</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        function feyzaEkle() {
+            document.querySelector("p").innerHTML += "Feyza ";
+        }
+
+        setInterval(feyzaEkle, 1000);
+    </script>
+</body>
+</html>
