@@ -65,7 +65,77 @@
         // son 2 eleman?
         yaz(meyveler.slice(-2));
 
+        const anaUnsurlar = ["toprak", "su", "ateş", "hava"];
+
+        const yeniDizi = meyveler.concat(anaUnsurlar);
+
+        yaz(yeniDizi);
+
+        // son 3 meyve ile ilk 3 unsuru yeni dizide birleşir ve yazdır
+        // hepsini tek satırda değişkene atamadan yap => kağan
+        yaz(meyveler.slice(-3).concat(anaUnsurlar.slice(0, 3)));
+
+        // önceki dersimizde callback function işledik
+        // onu şimdi size hatırlatacağım ama önce bir fonksiyon
+        // tanımlayalım stringleri tersine çevirsin
+
+        function tersi(metin) {
+            return metin.split("").reverse().join("");
+        }
+
+        yaz("meryem'in tersi: " + tersi("meryem"));
+
+        // diziyi tranformasyona sokmak ve yeni bir diziye dönüştürmek
+
+        // soru: her meyvenin tersten yazılmış haliyle yeni bir dizi
+        // oluşturabilir misiniz, yani kavun olacak nuvak kiraz
+        // olacak zarik... 
+        const yeniDizi2 = meyveler.map(tersi);
+        yaz(yeniDizi2);
+
+        // yeni dizi istiyorum, bu dizide öğelerin
+        // string uzunlukları yer alsın
+        const uzunluklar = meyveler.map(oge => oge.length);
+        yaz(uzunluklar);
+
+        // her unsurun büyük harfli hali
+        const buyukler = anaUnsurlar.map(x => x.toUpperCase());
+        yaz(buyukler);
         
+        // yöntem2
+        const buyukler2 = anaUnsurlar.map(function(x) {
+            return x.toUpperCase();
+        });
+        yaz(buyukler2);
+
+        // 4 unsurun her birinin sağına 
+        // sıra nosunun parantez içinde yazıldığı yeni dizi
+        const unsurlar2 = anaUnsurlar.map(function(oge, index) {
+            return oge + "(" + (index + 1) + ")";
+        });
+
+        yaz(unsurlar2);
+
+        // map metodunu kullanmadan bir üstteki soruyu çözünüz
+        const unsurlar3 = [];
+
+        anaUnsurlar.forEach((oge, indeks) => {
+            unsurlar3.push(oge + "(" + (indeks + 1) + ")");
+        });
+
+        yaz(unsurlar3);
+
+        // map ve forEach kullanmadan
+        const unsurlar4 = [];
+
+        for (let i = 0; i < anaUnsurlar.length; i++) {
+            const yeniOge = anaUnsurlar[i] + "(" + (i + 1) + ")";
+            unsurlar4.push(yeniOge);
+        }
+        yaz(unsurlar4);
+
+        // map ile tek satırda
+        yaz(anaUnsurlar.map((x, i) => `${x}(${i+1})`));
     </script>
 </body>
 
