@@ -1,0 +1,4 @@
+Sayfa açılır, renkler parlar,
+Kodlar yazılır, her şey bir arar,
+Butonlar çalışır, menüler akar,
+Frontend dünyası, hep yenilikle donar.

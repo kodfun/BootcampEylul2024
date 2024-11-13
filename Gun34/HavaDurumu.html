@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+</head>
+<body>
+    <form id="frmHava">
+        <label for="yer">Yer</label>
+        <input id="yer" type="text" placeholder="şehir adı.." required>
+        <button>Hava Durumunu Öğren</button>
+    </form>
+
+    <dl id="sonuc">
+        <dt>Şehir</dt>
+        <dd id="sehir">-</dd>
+        <dt>Sıcaklık</dt>
+        <dd id="sicaklik">-</dd>
+        <dt>Açıklama</dt>
+        <dd id="aciklama">-</dd>
+        <dt>Görsel</dt>
+        <dd id="gorsel">-</dd>
+    </dl>
+
+    <script>
+        const frmHava = document.getElementById("frmHava");
+        const txtYer = document.getElementById("yer");
+        const ddSehir = document.getElementById("sehir");
+        const ddSicaklik = document.getElementById("sicaklik");
+        const ddAciklama = document.getElementById("aciklama");
+        const ddGorsel = document.getElementById("gorsel");
+        
+        frmHava.onsubmit = function(event) {
+            event.preventDefault();
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${txtYer.value}&appid=API_KEY&units=metric&lang=tr`)
+                .then(res => res.json())
+                .then(data => {
+
+                    ddSehir.textContent = data.name;
+                    ddSicaklik.textContent = data.main.temp + " °C";
+                    ddAciklama.textContent = data.weather[0].description;
+                    ddGorsel.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="hava durumu">`;
+                });
+
+        }
+    </script>
+</body>
+</html>

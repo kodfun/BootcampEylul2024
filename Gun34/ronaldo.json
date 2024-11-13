@@ -1,0 +1,11 @@
+{
+    "name": "Cristiano Ronaldo",
+    "birth_date": "1985-02-05",
+    "nationality": "Portuguese",
+    "current_team": "Al Nassr",
+    "goals": 800,
+    "awards": [
+        "5 Ballon d'Or",
+        "4 European Golden Shoes"
+    ]
+}
