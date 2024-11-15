@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konuşulanı Yazıya Dök</title>
+    <style>
+        textarea {
+            font-size: 2em;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Konuşmayı Metne Dönüştürücü</h1>
+    <button id="baslat">Dinlemeye Başla</button><br>
+    <textarea id="sonuc" rows="10" cols="50"></textarea>
+    <hr>
+    Durdurmak için "avokado" deyiniz.
+
+    <script>
+        const btnBaslat = document.getElementById("baslat");
+        const txtSonuc = document.getElementById("sonuc");
+        let dinliyorMu = false;
+
+        // WEB SPEECH API (TANIMLAMA VE BAŞLATMA)
+        const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const sesTanima = new SR();
+        sesTanima.continuous = true; // sürekli dinle
+        sesTanima.lang = "tr-TR";
+        btnBaslat.onclick = function() {
+            if (dinliyorMu) {
+                sesTanima.stop();
+                btnBaslat.textContent = "Dinlemeye Başla";
+            }
+            else {
+                sesTanima.start();
+                btnBaslat.textContent = "Dinlemeyi Durdur";
+            }
+            dinliyorMu = !dinliyorMu;
+        };
+
+        // SONUÇLARIN ELDEN GEÇİRİLMESİ
+        sesTanima.onresult = function(event) {
+            let parcalar = event.results;
+            console.log(parcalar);
+            let sonKonusulan = parcalar[parcalar.length - 1][0].transcript;
+
+            if (sonKonusulan.includes("avokado")) {
+                btnBaslat.click();
+                return;
+            }
+            txtSonuc.value += sonKonusulan;
+            txtSonuc.scrollTop = txtSonuc.scrollHeight;
+
+        };
+    </script>
+</body>
+</html>
