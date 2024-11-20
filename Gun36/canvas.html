@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Üzerinde Çizim</title>
+    <link rel="shortcut icon" href="korsan.png" type="image/png">
+    <style>
+        body {
+            background: linear-gradient(90deg, gray, #ccc);
+        }
+
+        canvas {
+            border: 20px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+
+    <script>
+        // https://www.w3schools.com/html/html5_canvas.asp
+
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.moveTo(250, 110);
+        ctx.lineTo(500, 500);
+        ctx.lineTo(250, 250);
+        ctx.lineTo(0, 500);
+        ctx.lineTo(250, 110);
+        // ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 140, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "brown";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(400, 140, 40, 0, 2 * Math.PI );
+        ctx.strokeStyle = "brown";
+        ctx.lineWidth = 20;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(125, 55);
+        ctx.lineTo(375, 55);
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "blue";
+        ctx.stroke();
+
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 5;
+        ctx.strokeRect(180, 390, 140, 70);
+
+        ctx.fillStyle = "gold";
+        ctx.fillRect(220, 310, 50, 50);
+
+        let metin = "-- Zorluklar, büyümenin başlangıcıdır. --";
+
+        ctx.font = "14px Arial";
+        ctx.fillStyle = "black";
+
+        let gen = ctx.measureText(metin).width;
+        ctx.fillText(metin, (canvas.width - gen) / 2, 487);
+
+    </script>
+</body>
+
+</html>
