@@ -4,7 +4,9 @@ const treeImage = new Image();
 treeImage.src = "tree.png";
 const dinoImage = new Image();
 dinoImage.src = "dino.png";
+let skorMarjin = 10;
 let basladi = false;
+let basladiZaman;
 
 // ağaçların uzaklıkları (x koordinatında)
 let trees = [];
@@ -32,6 +34,7 @@ function ciz() {
     dinoCiz();
     agaclariCiz();
     sahneyiKaydir();
+    skoruCiz();
     let carpti = carptiMi();
     if (carpti) {
         oyunuBitir();
@@ -41,11 +44,43 @@ function ciz() {
     requestAnimationFrame(ciz);
 }
 
-function oyunuBitir() {
-    let txt = "GAME OVER!";
+function skoruCiz() {
+    let simdi = new Date();
+    let gecenSure = simdi - basladiZaman;
+    let skor = Math.floor(gecenSure / 1000);
+    let skorMetin = skorBicimle(skor);
     ctx.font = '24px Tiny5, sans-serif';
+    ctx.fillStyle = "black";
+    let metinBoyut = ctx.measureText(skorMetin);
+    let metinGen = metinBoyut.width;
+    let metinYuk = metinBoyut.actualBoundingBoxAscent 
+                    + metinBoyut.actualBoundingBoxDescent;
+    ctx.fillText(skorMetin, 
+        canvas.width - metinGen - skorMarjin,   
+        metinYuk + skorMarjin);
+}
+
+function skorBicimle(sayi) {
+    let uz = sayi.toString().length;
+    if (uz >= 5) return sayi.toString();
+    return "0".repeat(5 - uz) + sayi;
+}
+
+function oyunuBitir() {
+    basladi = false;
+    let txt = "GAME OVER!";
+    ctx.font = '28px Tiny5, sans-serif';
     const textWidth = ctx.measureText(txt).width;
+    ctx.fillStyle = "black";
     ctx.fillText(txt, (canvas.width - textWidth) / 2, canvas.height / 4);
+
+    let txt2 = ">>> Click to Play Again! <<<";
+    ctx.font = '16px Tiny5, sans-serif';
+    ctx.fillStyle = "red";
+    const textWidth2 = ctx.measureText(txt2).width;
+    ctx.fillText(txt2, 
+        (canvas.width - textWidth2) / 2, 
+        canvas.height / 4 * 3);
 }
 
 function carptiMi() {
@@ -93,6 +128,7 @@ function agaclariCiz() {
 
 function loadTrees() {
     // ilk ağaç canvas bitiminde
+    trees = []; // yeniden başladığında eski ağaçları sil
     trees.push(canvas.width);
 
     for (let i = 0; i < 1000; i++) {
@@ -132,9 +168,18 @@ function cizimiTemizle() {
 }
 
 function baslat() {
+    jd = 0; // zıplıyorsa dikey hareket yönünü sıfırla
+    jh = 0; // havadaysa zıplama yüksekliğini sıfırla
     basladi = true;
+    basladiZaman = new Date();
     loadTrees();
     requestAnimationFrame(ciz);
+}
+
+function yenidenBaslat() {
+    // yeniden başlatırken yapacağınız ekstra işlemleri
+    // burada yapabilirsiniz..
+    baslat();
 }
 
 function agacCiz(x) {
@@ -189,7 +234,14 @@ dinoImage.onload = function() {
     baslat();
 };
 
-canvas.onclick = jump;
+canvas.onclick = function() {
+    if (basladi) {
+        jump();
+    }
+    else {
+        yenidenBaslat();
+    }
+};
 
 window.onkeydown = function(event) {
     if (event.keyCode == 38)
