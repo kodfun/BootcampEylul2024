@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Giriş</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+
+    <ul>
+        <li>Pattaya</li>
+        <li>Ankara</li>
+        <li>Kentau</li>
+        <li>Gaziantep</li>
+        <li>Iğdır</li>
+        <li>Konya</li>
+        <li>Denizli</li>
+        <li>İstanbul</li>
+        <li>Bayburt</li>
+        <li>Konya</li>
+    </ul>
+
+    <h2>Rakammatik</h2>
+    <div id="rakamlar">
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+
+    <p><small>Gizli şifreyi bilirseniz tüm içerik kaybolacaktır!</small></p>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        // #1 baslik id'li elementin metnini "JQuery Öğreniyorum" yap
+        // #1A SAF JS İLE
+        // document.getElementById("baslik").textContent = "JQuery Öğreniyorum";
+        // #1B JQUERY İLE
+        $("#baslik").text("JQuery Öğreniyorum");
+
+        // #2 başlığa border ver
+        // document.getElementById("baslik").style.border = "1PX solid black";
+        $("#baslik").css("border", "1px solid black");
+        
+        // #3 başlığın title attribute'una bir değer ata
+        // document.getElementById("baslik").setAttribute("title", "bu bir başlıktır");
+        $("#baslik").attr("title", "I ♥ JQuery");
+
+        // #4 başlıktan sonra yatay çizgi ekle
+        // let hr = document.createElement("hr");
+        // document.getElementById("baslik").after(hr);
+        $("#baslik").after("<hr>");
+
+        // #5 tüm şehirlerin sonuna gülücük koy
+        // document.querySelectorAll("li").forEach((li, indeks) => {
+        //     li.textContent += " :) -" + indeks;
+        // });
+        // $("li").each((indeks, el) => el.append(" :) -" + indeks));
+
+        // #6 şehirlerin sonuna gülücük başına indeksini koy
+        $("li").each(function(i) {
+            $(this).append(" :)");
+            $(this).prepend("(" + i + ") ");
+        });
+
+        // ÖNEMLİ NOT: this keywordüne sırayla öğelerin atanmasını
+        // istiyorsanız arrow function yerine klasik function kullanın
+
+        // içinde u harfi içeren li öğelerini kırmızı yap
+        $("li").each(function() {
+            if ($(this).text().includes("u"))
+                $(this).css("color", "red");
+        });
+
+        // a harfi içermeyenlerin arka plan rengini sarı yap
+        $("li")
+            .filter((i, el) => !$(el).text().includes("a"))
+            .css("background", "yellow");
+
+        // tüm li öğelerinin metinlerini toptan al ve bir paragrafa koy
+        // o paragrafı da listenin altına koy
+        $("ul").after("<p>" + $("li").text() + "</p>");
+
+        // 7.indeksteki (0'dan başlayarak) li öğesini başa taşı
+        // $("ul").prepend($("li:nth-child(8)"));
+        $("ul").prepend($("li").eq(7));
+
+        // KAYAN LİSTE
+        // SANİYEDE BİR HER ELEMENT BİR ALTA KAYSIN
+        setInterval(function() {
+            $("ul").prepend($("li").last());
+        }, 1000);
+
+        // ya içerenleri büyük harfe çevir
+        $("li:contains('ya')").css("text-transform", "uppercase");
+
+        $("#rakamlar>button").click(function() {
+            let sayi = Number($(this).text());
+            $(this).text((sayi + 1) % 10);
+        });
+
+        // GİZLİ BİR ŞİFRE BELİRLEYELİM
+        // ONU RAKAMMATİKTEN GİRERSE SAYFADAKİ HERŞEYİ SİLSİN
+        let gizli = "100001";
+
+        $("#rakamlar>button").click(function() {
+            let girilen = $("button").text();
+            
+            if (girilen == gizli) {
+                $("body").html(""); // BÖLÜM SONU CANAVARI - by MerYo$
+
+                $("html,body").css({
+                    "height": "100%",
+                    "margin": 0
+                });
+
+                $("body").css({
+                    "background": "url(jumpscare.jpg) center",
+                    "background-size": "cover"
+                });
+            }
+        });
+    </script>
+</body>
+</html>
