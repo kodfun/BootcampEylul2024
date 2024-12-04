@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renk Seçici</title>
+    <style>
+        /* Genel body stilini güncelle */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Başlık stili */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form container (her bir bölüm için) */
+        div {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Label stilini daha düzgün hale getirelim */
+        label {
+            font-size: 1rem;
+            color: #555;
+            width: 80px;
+        }
+
+        /* Range input (slider) stilini daha geniş yapalım */
+        input[type="range"] {
+            width: 200px;
+            height: 8px;
+            border-radius: 5px;
+            -webkit-appearance: none;
+            background: #ddd;
+            transition: background 0.3s ease;
+        }
+
+        input[type="range"]:focus {
+            outline: none;
+            background: #888;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4e73df;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4e73df;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Slider değerini gösteren span */
+        span {
+            font-size: 1rem;
+            color: #333;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        /* Renk Kodu kutusunu düzenleyelim */
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f9f9f9;
+            cursor: not-allowed;
+        }
+
+        /* Renk kutusunu daha belirgin hale getirelim */
+        #renkKutusu {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background-color: rgb(0, 0, 0);
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Renk Seçici</h1>
+    <div>
+        <label for="red">Red</label>
+        <input id="red" type="range" min="0" max="255" value="0">
+        <span id="redValue">0</span>
+    </div>
+    <div>
+        <label for="green">Green</label>
+        <input id="green" type="range" min="0" max="255" value="0">
+        <span id="greenValue">0</span>
+    </div>
+    <div>
+        <label for="blue">Blue</label>
+        <input id="blue" type="range" min="0" max="255" value="0">
+        <span id="blueValue">0</span>
+    </div>
+    <div>
+        <label for="kod">Renk Kodu</label>
+        <input type="text" id="kod" value="rgb(0, 0, 0)" readonly>
+    </div>
+    <div id="renkKutusu"></div>
+
+    <script>
+
+        let r = 0, g = 0, b = 0;
+        const inputR = document.getElementById("red");
+        const inputG = document.getElementById("green");
+        const inputB = document.getElementById("blue");
+        const spanR = document.getElementById("redValue");
+        const spanG = document.getElementById("greenValue");
+        const spanB = document.getElementById("blueValue");
+
+        inputR.oninput = function () {
+            spanR.textContent = r = inputR.value;
+            renkGoster();
+        };
+        inputG.oninput = function () {
+            spanG.textContent = g = inputG.value;
+            renkGoster();
+        };
+        inputB.oninput = function () {
+            spanB.textContent = b = inputB.value;
+            renkGoster();
+        };
+
+        /*
+            Tanımladığımız r, g, b değişkenlerini kullanarak
+            o anki değerleriyle renk kodu kutusu ve renk kutu divinin
+            arkaplan rengini günceller.
+        */
+        function renkGoster() {
+            let kod = `rgb(${r}, ${g}, ${b})`;
+            document.getElementById("kod").value = kod;
+            document.getElementById("renkKutusu").style.backgroundColor = kod;
+        }
+
+        renkGoster();
+    </script>
+</body>
+
+</html>
