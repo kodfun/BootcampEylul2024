@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renk Seçici v2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Renk Seçici (v2)</h1>
+        <div id="seciciler"></div>
+        <div id="sonuc">
+            <div id="kod">rgb(128, 128, 128)</div>
+        </div>
+    </div>
+
+    <script>
+        const divSeciciler = document.getElementById("seciciler");
+        const divSonuc = document.getElementById("sonuc");
+        const divKod = document.getElementById("kod");
+
+        let renk = {
+            red: 128,
+            green: 128,
+            blue: 128,
+            rgb: function() {
+                return `rgb(${this.red}, ${this.green}, ${this.blue})`;
+            }
+        };
+
+        for (let ad in renk) {
+            if (typeof renk[ad] != "function") {
+                let divSecici = `
+<div class="secici">
+    <label for="${ad}">${ad[0].toUpperCase()}</label>
+    <input type="range" id="${ad}" name="${ad}" value="128" 
+        min="0" max="255" oninput="guncelle('${ad}')">
+    <span id="${ad}Deger">128</span>
+</div>`;
+                divSeciciler.innerHTML += divSecici;
+            }
+        }
+
+        function guncelle(renkAd) {
+            const input = document.getElementById(renkAd);
+            const span = document.getElementById(renkAd + "Deger");
+            span.textContent = input.value;
+            renk[renkAd] = Number(input.value);
+            divKod.textContent = renk.rgb();
+            divSonuc.style.backgroundColor = renk.rgb();
+        }
+    </script>
+</body>
+</html>
