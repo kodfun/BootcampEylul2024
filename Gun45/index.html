@@ -13,14 +13,30 @@
 </head>
 
 <body class="h-100 d-flex flex-column">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images,
+                lists, etc.
+            </div>
+        </div>
+    </div>
     <nav class="navbar bg-dark" data-bs-theme="dark">
-        <div class="container-md">
+        <div class="container-md justify-content-start">
+            <button class="d-sm-none navbar-toggler me-2" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <span class="navbar-brand mb-0 h1">Not Defteri</span>
         </div>
     </nav>
     <div class="container-md flex-fill">
         <div class="row h-100">
-            <div class="col-4 col-lg-3 h-100 d-flex flex-column">
+            <div class="d-none d-sm-flex col-4 col-lg-3 h-100 flex-column">
                 <div class="d-flex">
                     <button id="ekle" class="btn btn-primary mt-3 mb-2 ms-auto">
                         <i class="fa-solid fa-plus"></i>
@@ -29,17 +45,21 @@
                 <div class="flex-fill position-relative">
                     <div class="w-100 overflow-auto position-absolute top-0 bottom-0 mb-3">
                         <div id="liste" class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                            <button type="button" class="list-group-item list-group-item-action active"
+                                aria-current="true">
                                 The current button
                             </button>
-                            <button type="button" class="list-group-item list-group-item-action">A second button item</button>
-                            <button type="button" class="list-group-item list-group-item-action">A third button item</button>
-                            <button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+                            <button type="button" class="list-group-item list-group-item-action">A second button
+                                item</button>
+                            <button type="button" class="list-group-item list-group-item-action">A third button
+                                item</button>
+                            <button type="button" class="list-group-item list-group-item-action">A fourth button
+                                item</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-8 col-lg-9 h-100">
+            <div class="col-sm-8 col-lg-9 h-100">
                 <form class="h-100 pt-3 d-flex flex-column">
                     <div class="mb-2">
                         <input class="form-control" type="text" placeholder="Başlık">
@@ -67,3 +87,11 @@
 </body>
 
 </html>
+
+<!-- 1) sayfa daraldığında (mobil görünüm) hamburger butonu sol üstte görünsün
+2) sayfa daraldığında sol sütun gizlensin
+3) hamburgere basıldığında offcanvas menü açılsın
+4) sayfa daraldığında sol menüdeki başlıklar offcanvas içine -komple- taşınsın
+5) sayfa genişlediğinde gerisin geriye offcanvas'taki menü tekrar eski yerine taşınsın
+6) çarpı tuşuna basınca offcanvas menü kapansın
+7) sayfa genişlediğinde -eğer açıksa- offcanvas menüyü gizle -->
