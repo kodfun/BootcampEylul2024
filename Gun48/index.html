@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Defteri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="h-100 d-flex flex-column">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Not Defteri</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="offcanvasBody"></div>
+    </div>
+    <nav class="navbar bg-dark" data-bs-theme="dark">
+        <div class="container-md justify-content-start">
+            <button class="d-sm-none navbar-toggler me-2" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-brand mb-0 h1">Not Defteri</span>
+        </div>
+    </nav>
+    <div class="container-md flex-fill">
+        <div class="row h-100">
+            <div id="sidebarColumn" class="d-none d-sm-block col-4 col-lg-3 h-100">
+                <div id="menu" class="d-flex flex-column h-100">
+                    <div class="d-flex">
+                        <button id="ekle" class="btn btn-primary mt-sm-3 mb-2 ms-auto">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="flex-fill position-relative">
+                        <div class="w-100 overflow-auto position-absolute top-0 bottom-0 mb-3">
+                            <div id="liste" class="list-group">
+                                <button type="button" class="list-group-item list-group-item-action active"
+                                    aria-current="true">
+                                    The current button
+                                </button>
+                                <button type="button" class="list-group-item list-group-item-action">A second button
+                                    item</button>
+                                <button type="button" class="list-group-item list-group-item-action">A third button
+                                    item</button>
+                                <button type="button" class="list-group-item list-group-item-action">A fourth button
+                                    item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-lg-9 h-100">
+                <form id="frmNot" class="h-100 pt-3 d-flex flex-column">
+                    <div class="mb-2">
+                        <input id="baslik" class="form-control" type="text" placeholder="Başlık">
+                    </div>
+                    <div class="mb-2 flex-fill">
+                        <textarea id="icerik" class="form-control h-100" placeholder="Bir şeyler yazınız.."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button id="kaydet" class="btn btn-success">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                        </button>
+                        <button id="sil" class="btn btn-danger">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/site.js"></script>
+</body>
+
+</html>
+
+<!-- 1) sayfa daraldığında (mobil görünüm) hamburger butonu sol üstte görünsün
+2) sayfa daraldığında sol sütun gizlensin
+3) hamburgere basıldığında offcanvas menü açılsın
+4) sayfa daraldığında sol menüdeki başlıklar offcanvas içine -komple- taşınsın
+5) sayfa genişlediğinde gerisin geriye offcanvas'taki menü tekrar eski yerine taşınsın
+6) çarpı tuşuna basınca offcanvas menü kapansın
+7) sayfa genişlediğinde -eğer açıksa- offcanvas menüyü gizle -->
